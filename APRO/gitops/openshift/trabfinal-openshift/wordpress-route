@@ -1,0 +1,18 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: wordpress
+  namespace: anm-multilayer-app
+  annotations:
+    openshift.io/host.generated: 'true'
+spec:
+  host: wordpress-anm-multilayer-app.apps.eu410.prod.nextcle.com
+  path: /
+  to:
+    kind: Service
+    name: wordpress
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
+

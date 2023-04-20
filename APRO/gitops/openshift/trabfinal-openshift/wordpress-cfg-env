@@ -1,0 +1,14 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: wordpress-cfg-env
+  namespace: anm-multilayer-app
+  uid: b1a46fda-9cff-47be-b80e-6178288b7116
+  resourceVersion: '318724061'
+  creationTimestamp: '2023-04-14T11:42:35Z'
+data:
+  WORDPRESS_BLOG_NAME: Blog do Alexandre Nunes
+  WORDPRESS_DATABASE_HOST: mysql
+  WORDPRESS_DATABASE_NAME: wordpress
+  WORDPRESS_DATABASE_USER: wordpress
+  WORDPRESS_USERNAME: admin

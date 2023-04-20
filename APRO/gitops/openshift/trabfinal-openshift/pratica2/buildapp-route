@@ -1,0 +1,35 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: anm-build-app
+  namespace: anm-build-app
+  labels:
+    app: anm-build-app
+    app.kubernetes.io/component: anm-build-app
+    app.kubernetes.io/instance: anm-build-app
+    app.kubernetes.io/name: anm-build-app
+    app.kubernetes.io/part-of: anm-build-app
+    app.openshift.io/runtime: python
+spec:
+  host: anm-build-app-anm-build-app.crc-lgph7-master-0.crc.oinmrywi7wst.instruqt.io
+  to:
+    kind: Service
+    name: anm-build-app
+    weight: 100
+  port:
+    targetPort: 8080-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: >-
+        anm-build-app-anm-build-app.crc-lgph7-master-0.crc.oinmrywi7wst.instruqt.io
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2023-04-15T15:16:43Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: router-default.crc-lgph7-master-0.crc.oinmrywi7wst.instruqt.io

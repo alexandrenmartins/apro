@@ -1,0 +1,24 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql
+  namespace: anm-multilayer-app
+  uid: 25e076df-c34b-49e9-82d5-18528e0ee135
+  resourceVersion: '318706010'
+  creationTimestamp: '2023-04-14T11:31:36Z'
+spec:
+  clusterIP: None
+  ipFamilies:
+    - IPv4
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  internalTrafficPolicy: Cluster
+  clusterIPs:
+    - None
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app: mysql
